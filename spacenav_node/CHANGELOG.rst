@@ -2,6 +2,22 @@
 Changelog for package spacenav_node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.15.1 (2021-06-07)
+-------------------
+
+1.15.0 (2020-10-12)
+-------------------
+* Remove spacenavd from the requirements for Noetic (`#186 <https://github.com/ros-drivers/joystick_drivers/issues/186>`_)
+* Contributors: Tyler Weaver
+
+1.14.0 (2020-07-07)
+-------------------
+* roslint and Generic Clean-Up (`#161 <https://github.com/ros-drivers/joystick_drivers/issues/161>`_)
+* Contributors: Joshua Whitley
+
+1.13.0 (2019-06-24)
+-------------------
+
 1.12.0 (2018-06-11)
 -------------------
 * Adding tested spacenav scaling

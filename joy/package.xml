@@ -1,6 +1,6 @@
 <package format="2">
   <name>joy</name>
-  <version>1.12.0</version>
+  <version>1.15.1</version>
   <license>BSD</license>
 
   <description>
@@ -22,11 +22,11 @@
   <url type="bugtracker">https://github.com/ros-drivers/joystick_drivers/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslint</build_depend>
   
-  <depend>roscpp</depend>
   <depend>diagnostic_updater</depend>
   <depend>sensor_msgs</depend>
-
+  <depend>roscpp</depend>
   <!-- depend>joystick</depend -->
   <exec_depend>sdl2</exec_depend>
 

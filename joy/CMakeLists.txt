@@ -1,16 +1,22 @@
-# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(joy)
 
 # Load catkin and all dependencies required for this package
-set(CATKIN_DEPS roscpp diagnostic_updater sensor_msgs)
+set(CATKIN_DEPS roscpp diagnostic_updater sensor_msgs roslint)
 find_package(catkin REQUIRED ${CATKIN_DEPS})
-catkin_package(DEPENDS ${CATKIN_DEPS})
+
+roslint_cpp()
+
+catkin_package(DEPENDS sensor_msgs)
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
   # Look for <linux/joystick.h>
   include(CheckIncludeFiles)
   check_include_files(linux/joystick.h HAVE_LINUX_JOYSTICK_H)
+
+if(CATKIN_ENABLE_TESTING)
+  roslint_add_test()
+endif()
 
   if(HAVE_LINUX_JOYSTICK_H)
     include_directories(msg/cpp ${catkin_INCLUDE_DIRS})

@@ -10,7 +10,7 @@ catkin_package(DEPENDS sensor_msgs)
 include_directories(msg/cpp ${catkin_INCLUDE_DIRS})
 
 if(CATKIN_ENABLE_TESTING)
-    roslint_add_test()
+  roslint_add_test()
 endif()
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")

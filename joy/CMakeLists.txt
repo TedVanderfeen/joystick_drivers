@@ -4,9 +4,8 @@ project(joy)
 # Load catkin and all dependencies required for this package
 set(CATKIN_DEPS roscpp diagnostic_updater sensor_msgs roslint)
 find_package(catkin REQUIRED ${CATKIN_DEPS})
-catkin_package(DEPENDS sensor_msgs)
-
 roslint_cpp()
+catkin_package(DEPENDS sensor_msgs)
 
 include_directories(msg/cpp ${catkin_INCLUDE_DIRS})
 

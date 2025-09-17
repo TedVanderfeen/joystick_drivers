@@ -26,8 +26,6 @@ endif()
     message("Warning: no <linux/joystick.h>; won't build joy node")
   endif(HAVE_LINUX_JOYSTICK_H)
 
-  #catkin_add_nosetests(test/test_joy_msg_migration.py)
-
   # Install targets
   if(HAVE_LINUX_JOYSTICK_H)
   install(TARGETS joy_node
@@ -43,7 +41,7 @@ else()
 
   include(CheckIncludeFiles)
     include_directories(msg/cpp ${catkin_INCLUDE_DIRS})
-  add_executable(joy_node src/joy_node_win.cpp)
+  add_executable(joy_node src/joy_node_sdl.cpp)
 
   set_target_properties(SDL2::SDL2 PROPERTIES
     MAP_IMPORTED_CONFIG_MINSIZEREL Release

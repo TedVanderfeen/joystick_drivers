@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 #include "ros/ros.h"
+#include <ros/package.h>
 #include <diagnostic_updater/diagnostic_updater.h>
 #include <sensor_msgs/Joy.h>
 
@@ -70,7 +71,8 @@ class Joystick
     _joyNodeHandlePrivate.param<double>("coalesce_interval", _coalesce_interval, 0.001);
     _joyNodeHandlePrivate.param<bool>("default_trig_val", _default_trig_val,false);
     _joyNodeHandlePrivate.param<bool>("sticky_buttons", _sticky_buttons, false);
-    _joyNodeHandlePrivate.param<std::string>("mappings", _mappingsFile, "");
+    std::string defaultMappings = ros::package::getPath("joy") + "/launch/gamecontrollerdb.txt";
+    _joyNodeHandlePrivate.param<std::string>("mappings", _mappingsFile, defaultMappings);
 
     if (_coalesce_interval < 0)
     {

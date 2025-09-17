@@ -60,7 +60,7 @@ else()
 
 
   file(DOWNLOAD
-      https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/e84ccd2617a2c5c507e08a0b6221a7bc23d97695/gamecontrollerdb.txt
+      https://raw.githubusercontent.com/mdqinc/SDL_GameControllerDB/master/gamecontrollerdb.txt
       ${PROJECT_SOURCE_DIR}/launch/gamecontrollerdb.txt
       SHOW_PROGRESS
   )    
